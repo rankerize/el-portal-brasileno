@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="description" content="Pitch deck privado para El Portal Brasileño.">
+  <title>Propuesta | El Portal Brasileño</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+  </style>
+  <style>
+    :root{
+      --bg:#faf9f6;
+      --text:#1a1a1a;
+      --muted:#474746;
+      --primary:#f2b800;
+      --primary-dark:#1a1a1a;
+      --accent:#f2b800;
+      --accent-2:#e03b3a;
+      --surface:rgba(255,255,255,.92);
+      --border:rgba(26,26,26,.08);
+      --shadow:0 24px 60px rgba(242,184,0,.12);
+      --radius:28px;
+    }
+    *{box-sizing:border-box}
+    html{
+      scroll-behavior:smooth;
+      scroll-snap-type:y mandatory;
+      height:100%;
+    }
+    body{
+      margin:0;
+      font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(242,184,0,.18), transparent 20%),
+        radial-gradient(circle at top right, rgba(242,184,0,.08), transparent 18%),
+      linear-gradient(180deg,#ffffff 0%,#faf9f6 100%);
+      position:relative;
+      overflow-x:hidden;
+      overflow-y:auto;
+      min-height:100%;
+    }
+    body::before,
+    body::after{
+      content:"";
+      position:fixed;
+      inset:auto;
+      border-radius:999px;
+      pointer-events:none;
+      z-index:0;
+      filter:blur(2px);
+    }
+    body::before{
+      width:360px;
+      height:360px;
+      top:-120px;
+      right:-120px;
+      background:radial-gradient(circle, rgba(242,184,0,.16), rgba(242,184,0,0) 68%);
+    }
+    body::after{
+      width:280px;
+      height:280px;
+      left:-110px;
+      bottom:6%;
+      background:radial-gradient(circle, rgba(26,26,26,.08), rgba(26,26,26,0) 68%);
+    }
+    a{color:inherit}
+    img{display:block; max-width:100%}
+    h1,h2,h3{
+      font-family:'Outfit','Plus Jakarta Sans',Arial,Helvetica,sans-serif;
+      font-weight:800;
+    }
+
+    .deck{
+      min-height:100vh;
+      position:relative;
+      z-index:1;
+      padding-top:118px;
+    }
+    .slide{
+      min-height:100vh;
+      scroll-snap-align:start;
+      padding:28px 20px;
+      display:flex;
+      align-items:center;
+    }
+    .shell{
+      width:min(1180px,100%);
+      margin:0 auto;
+    }
+    .panel{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:0 28px 70px rgba(17,17,17,.10);
+      backdrop-filter:blur(14px);
+      overflow:hidden;
+    }
+    .hero{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:12px;
+      min-height:78vh;
+      padding:12px;
+      background:#1e1e1e;
+    }
+    .hero-copy{
+      padding:56px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:18px;
+      border-radius:20px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.88), rgba(255,255,255,.68)),
+        radial-gradient(circle at top left, rgba(242,184,0,.10), transparent 42%);
+    }
+    .hero-visual{
+      position:relative;
+      display:flex;
+      min-height:clamp(440px, 65vh, 620px);
+      overflow:hidden;
+      border-radius:20px;
+      background:#141414;
+      isolation:isolate;
+    }
+    .hero-video-frame{
+      position:relative;
+      width:100%;
+      min-height:100%;
+      overflow:hidden;
+      background:#141414;
+      isolation:isolate;
+    }
+    .proposal-hero-video{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      transform:scale(1.035);
+      filter:saturate(.9) contrast(1.06);
+      z-index:0;
+    }
+    .video-shade{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.12) 0%, rgba(0,0,0,.06) 44%, rgba(0,0,0,.76) 100%),
+        linear-gradient(90deg, rgba(0,0,0,.16), transparent 58%);
+      z-index:1;
+    }
+    .video-topline{
+      position:absolute;
+      top:22px;
+      left:22px;
+      right:22px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      color:#fff;
+      font-size:.72rem;
+      font-weight:800;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      z-index:2;
+    }
+    .video-topline::after{
+      content:"";
+      width:54px;
+      height:3px;
+      border-radius:999px;
+      background:var(--primary);
+    }
+    .motion-orbit{
+      position:absolute;
+      width:210px;
+      height:210px;
+      right:-86px;
+      top:-92px;
+      border:1px solid rgba(242,184,0,.64);
+      border-radius:50%;
+      pointer-events:none;
+      z-index:2;
+    }
+    .motion-orbit::before,
+    .motion-orbit::after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      background:var(--primary);
+    }
+    .motion-orbit::before{width:8px;height:8px;top:32px;left:17px}
+    .motion-orbit::after{width:5px;height:5px;right:18px;bottom:45px;background:var(--accent-2)}
+    .video-caption{
+      position:absolute;
+      right:20px;
+      bottom:156px;
+      color:rgba(255,255,255,.95);
+      font-size:.78rem;
+      line-height:1.45;
+      text-align:right;
+      max-width:19ch;
+      font-weight:600;
+      z-index:2;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(242,184,0,.16);
+      color:var(--text);
+      font-size:.82rem;
+      font-weight:700;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      width:fit-content;
+    }
+    h1,h2,h3,p{margin:0}
+    h1{
+      font-size:clamp(2.7rem,6vw,5rem);
+      line-height:.95;
+      letter-spacing:-.06em;
+      max-width:11ch;
+    }
+    .lead{
+      font-size:clamp(1.03rem,1.6vw,1.22rem);
+      color:var(--muted);
+      max-width:62ch;
+      line-height:1.7;
+    }
+    .pills,.tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .pill,.tag{
+      padding:9px 12px;
+      border-radius:999px;
+      background:rgba(242,184,0,.12);
+      color:var(--text);
+      font-weight:700;
+      font-size:.9rem;
+    }
+    .stack{
+      display:grid;
+      gap:12px;
+    }
+    .stat{
+      padding:16px 18px;
+      border-radius:18px;
+      background:rgba(255,255,255,.88);
+      border:1px solid var(--border);
+      box-shadow:0 12px 28px rgba(17,17,17,.05);
+    }
+    .stat strong{display:block; color:var(--primary-dark); margin-bottom:4px}
+    .stat span{color:var(--muted)}
+    .slide-title{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin-bottom:22px;
+      padding-top:8px;
+      position:relative;
+    }
+    .slide-title::before{
+      content:"";
+      width:124px;
+      height:4px;
+      border-radius:999px;
+      background:linear-gradient(90deg, var(--accent), var(--primary-dark), var(--accent-2));
+      position:absolute;
+      top:0;
+      left:0;
+    }
+    .slide-title h2{
+      font-size:clamp(1.8rem,3vw,2.8rem);
+      letter-spacing:-.04em;
+    }
+    .slide-title p{color:var(--muted); max-width:72ch}
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+    .grid-4{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+    .card{
+      padding:30px;
+      border-radius:24px;
+      background:rgba(255,255,255,.78);
+      border:1px solid var(--border);
+    }
+    .mini{
+      padding:18px;
+      border-radius:18px;
+      background:rgba(255,255,255,.84);
+      border:1px solid var(--border);
+      box-shadow:0 12px 26px rgba(17,17,17,.04);
+    }
+    .mini strong,.card strong{display:block; color:var(--primary-dark); margin-bottom:6px}
+    .muted{color:var(--muted)}
+    .image{
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(250,249,246,.92));
+      box-shadow:0 20px 42px rgba(26,26,26,.10);
+    }
+    .image img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      background:linear-gradient(180deg,#fffefb,#f6f1ea);
+      padding:12px;
+    }
+    .hero-brand{
+      position:absolute;
+      right:20px;
+      bottom:20px;
+      left:20px;
+      display:flex;
+      align-items:center;
+      gap:16px;
+      padding:16px 18px;
+      border-radius:24px;
+      background:rgba(255,255,255,.90);
+      border:1px solid var(--border);
+      box-shadow:0 16px 36px rgba(17,17,17,.06);
+      z-index:2;
+    }
+    .hero-brand img{
+      width:92px;
+      height:92px;
+      object-fit:contain;
+      border-radius:18px;
+      background:#fff;
+      padding:6px;
+      border:1px solid var(--border);
+      flex:0 0 auto;
+    }
+    .hero-brand .brand-copy{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      min-width:0;
+    }
+    .hero-brand .brand-copy strong{
+      font-size:1.05rem;
+      letter-spacing:-.02em;
+      color:var(--text);
+    }
+    .hero-brand .brand-copy span{
+      color:var(--primary-dark);
+      font-weight:800;
+      text-transform:uppercase;
+      font-size:.78rem;
+      letter-spacing:.08em;
+    }
+    .hero-brand .brand-copy p{
+      color:#5b5b58;
+      font-size:.95rem;
+      line-height:1.5;
+    }
+    .hero-summary{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin-top:4px;
+    }
+    .hero-summary-item{
+      padding:13px 12px;
+      border-left:3px solid var(--primary);
+      background:rgba(242,184,0,.08);
+      border-radius:0 14px 14px 0;
+    }
+    .hero-summary-item strong{
+      display:block;
+      color:var(--text);
+      font-family:'Outfit','Plus Jakarta Sans',Arial,Helvetica,sans-serif;
+      font-size:1.1rem;
+      line-height:1;
+      margin-bottom:4px;
+    }
+    .hero-summary-item span{
+      display:block;
+      color:var(--muted);
+      font-size:.75rem;
+      line-height:1.3;
+      font-weight:700;
+    }
+    .image.tall img{height:100%; min-height:420px}
+    .image.square img{aspect-ratio:1/1}
+    .grid-4 .image img{
+      aspect-ratio:3/4;
+      object-fit:contain;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.96), rgba(247,241,231,.90));
+    }
+    .map-shot img{
+      aspect-ratio:4/3;
+      object-fit:cover;
+      padding:0;
+    }
+    .map-card{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .map-card .muted{
+      line-height:1.55;
+    }
+    .list{
+      padding-left:18px;
+      margin:10px 0 0;
+    }
+    .list li{margin-bottom:8px}
+    .compare{
+      display:grid;
+      grid-template-columns:1fr auto 1fr auto 1fr;
+      gap:18px;
+      align-items:center;
+    }
+    .arrow{
+      width:54px;
+      height:54px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:rgba(242,184,0,.16);
+      color:var(--primary-dark);
+      font-weight:900;
+      font-size:1.35rem;
+    }
+    .price{
+      display:grid;
+      gap:14px;
+    }
+    .price .item{
+      padding:16px 18px;
+      border-radius:18px;
+      background:rgba(255,255,255,.78);
+      border:1px solid var(--border);
+    }
+    .price strong{display:block; color:var(--primary-dark); margin-bottom:4px}
+    .timeline{
+      margin:10px 0 18px;
+      padding:22px;
+      border-radius:24px;
+      background:linear-gradient(180deg, rgba(255,255,255,.90), rgba(250,245,235,.82));
+      border:1px solid var(--border);
+      box-shadow:0 18px 34px rgba(17,17,17,.05);
+    }
+    .timeline-track{
+      position:relative;
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:16px;
+      padding:20px 4px 12px;
+    }
+    .timeline-track::before{
+      content:"";
+      position:absolute;
+      left:8%;
+      right:8%;
+      top:50%;
+      height:10px;
+      transform:translateY(-50%);
+      border-radius:999px;
+      background:
+        linear-gradient(90deg,
+          rgba(242,184,0,.95) 0 18%,
+          rgba(242,184,0,.25) 18% 42%,
+          rgba(26,26,26,.18) 42% 58%,
+          rgba(229,57,53,.88) 58% 82%,
+          rgba(26,26,26,.18) 82% 100%);
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.55);
+    }
+    .timeline-point{
+      position:relative;
+      z-index:1;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+      min-width:0;
+    }
+    .timeline-dot{
+      width:24px;
+      height:24px;
+      border-radius:50%;
+      border:4px solid #fff;
+      box-shadow:0 8px 18px rgba(17,17,17,.15);
+      background:var(--primary);
+      margin-top:38px;
+    }
+    .timeline-dot.amber{background:var(--accent)}
+    .timeline-dot.red{background:var(--accent-2)}
+    .timeline-point strong{
+      font-size:.92rem;
+      color:var(--text);
+      letter-spacing:-.02em;
+    }
+    .timeline-point span{
+      font-size:.82rem;
+      color:var(--muted);
+      line-height:1.35;
+    }
+    .timeline-legend{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
+    }
+    .legend-chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.82);
+      border:1px solid var(--border);
+      color:var(--muted);
+      font-size:.88rem;
+      font-weight:700;
+    }
+    .legend-swatch{
+      width:12px;
+      height:12px;
+      border-radius:50%;
+      display:inline-block;
+      background:var(--primary);
+    }
+    .legend-swatch.amber{background:var(--accent)}
+    .legend-swatch.red{background:var(--accent-2)}
+    .legend-swatch.muted{background:#c6c1b7}
+    .cta{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:13px 18px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+    }
+    .btn.primary{background:var(--primary); color:#fff}
+    .btn.secondary{background:rgba(255,255,255,.78); border:1px solid var(--border)}
+
+    .proposal-promo{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:40px;
+      background:var(--primary);
+      color:var(--primary-dark);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:1002;
+      font-family:'Outfit','Plus Jakarta Sans',Arial,Helvetica,sans-serif;
+      font-weight:800;
+      font-size:.9rem;
+      letter-spacing:.03em;
+      box-shadow:0 2px 10px rgba(0,0,0,.1);
+    }
+
+    .proposal-header{
+      position:fixed;
+      top:40px;
+      left:0;
+      width:100%;
+      height:78px;
+      background:rgba(250,249,246,.94);
+      backdrop-filter:blur(15px);
+      -webkit-backdrop-filter:blur(15px);
+      border-bottom:1px solid var(--border);
+      z-index:1001;
+    }
+
+    .proposal-header-inner{
+      max-width:1180px;
+      height:100%;
+      margin:0 auto;
+      padding:0 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .proposal-logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--text);
+      font-weight:900;
+      letter-spacing:-.03em;
+      white-space:nowrap;
+    }
+
+    .proposal-logo img{
+      width:62px;
+      height:62px;
+      object-fit:contain;
+    }
+
+    .proposal-nav{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      flex-wrap:wrap;
+      justify-content:center;
+      color:var(--text);
+      font-weight:700;
+    }
+
+    .proposal-nav a{
+      font-size:.95rem;
+      opacity:.86;
+    }
+
+    .proposal-nav a:hover{
+      color:var(--primary);
+      opacity:1;
+    }
+
+    .nav{
+      position:fixed;
+      right:18px;
+      top:50%;
+      transform:translateY(-50%);
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      z-index:20;
+    }
+    .nav a{
+      width:12px;
+      height:12px;
+      border-radius:50%;
+      background:rgba(17,17,17,.22);
+      border:1px solid rgba(255,255,255,.8);
+      box-shadow:0 6px 18px rgba(30,30,30,.12);
+      text-indent:-9999px;
+      overflow:hidden;
+    }
+
+    @media (max-width: 980px){
+      .hero,.grid-2,.grid-3,.grid-4,.compare{grid-template-columns:1fr}
+      .hero{min-height:auto}
+      .hero-copy{padding:28px}
+      .hero-visual{min-height:510px}
+      .arrow{transform:rotate(90deg); margin:0 auto}
+      .image.tall img{min-height:320px}
+      .nav{display:none}
+      .timeline-track{grid-template-columns:1fr; gap:10px}
+      .timeline-track::before{display:none}
+      .timeline-dot{margin-top:0}
+    }
+    @media (max-width:640px){
+      .slide{padding:14px 12px}
+      .hero{padding:8px;gap:8px}
+      .hero-copy,.card{padding:20px}
+      .hero-visual{min-height:480px}
+      .hero-brand{right:12px;bottom:12px;left:12px;padding:13px}
+      .hero-brand img{width:62px;height:62px}
+      .hero-brand .brand-copy p{display:none}
+      .video-topline{top:15px;right:16px;left:16px}
+      .video-caption{right:16px;bottom:118px}
+      .hero-summary{grid-template-columns:1fr}
+      h1{max-width:100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="proposal-promo">⚽ <strong>¡Combos Futboleros!</strong> Pide hoy tu combo favorito y reclama tu Raspa y Gana virtual ⚽</div>
+  <header class="proposal-header">
+    <div class="proposal-header-inner">
+      <a class="proposal-logo" href="#s1">
+        <img src="../productos fotos/logo-nuevo-crop.png" alt="El Portal Brasileño">
+        <span>El Portal Brasileño</span>
+      </a>
+      <nav class="proposal-nav" aria-label="Secciones de la propuesta">
+        <a href="#s1">Inicio</a>
+        <a href="#s2">Diagnóstico</a>
+        <a href="#s3">Evidencia</a>
+        <a href="#s4">Entorno</a>
+        <a href="#s6">Pauta</a>
+        <a href="#s10">Presupuesto</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="nav" aria-label="Secciones">
+    <a href="#s1">1</a>
+    <a href="#s2">2</a>
+    <a href="#s3">3</a>
+    <a href="#s4">4</a>
+    <a href="#s6">5</a>
+    <a href="#s7">6</a>
+    <a href="#s8">7</a>
+    <a href="#s9">8</a>
+    <a href="#s10">9</a>
+  </nav>
+
+  <main class="deck">
+    <section class="slide" id="s1">
+      <div class="shell panel hero">
+        <div class="hero-copy" data-motion="hero-copy">
+          <div class="eyebrow">Propuesta privada</div>
+          <h1>Diagnóstico, evidencia y estrategia para El Portal Brasileño</h1>
+          <p class="lead">Una hoja de ruta comercial para hacer visible el negocio, ordenar sus canales digitales y convertir el tráfico de cada sede en pedidos.</p>
+          <div class="tags">
+            <span class="tag">Instagram</span>
+            <span class="tag">Google Maps</span>
+            <span class="tag">Rappi</span>
+            <span class="tag">WordPress</span>
+            <span class="tag">Pauta</span>
+          </div>
+          <div class="hero-summary" aria-label="Resumen de la propuesta">
+            <div class="hero-summary-item"><strong>2</strong><span>Sedes para activar</span></div>
+            <div class="hero-summary-item"><strong>3 meses</strong><span>De ejecución estratégica</span></div>
+            <div class="hero-summary-item"><strong>$15 M</strong><span>Inversión total propuesta</span></div>
+          </div>
+        </div>
+        <div class="hero-visual" data-motion="video-frame">
+          <div class="hero-video-frame">
+            <video class="proposal-hero-video" autoplay muted loop playsinline preload="metadata" poster="../Fotos producidas/magnific_foto-profesional-de-este-_rlHn4Ypxtc.png" aria-hidden="true">
+              <source src="../Fotos producidas/video hero.mp4" type="video/mp4">
+            </video>
+            <div class="video-shade"></div>
+            <div class="video-topline"><span>El Portal Brasileño</span><span>Presentación 2026</span></div>
+            <div class="motion-orbit" data-motion="orbit" aria-hidden="true"></div>
+            <p class="video-caption">De una operación con potencial a un sistema digital que se entiende, se encuentra y se pide.</p>
+          <div class="hero-brand">
+            <img src="./assets/logo-aprobado.png" alt="Logo aprobado de El Portal Brasileño">
+            <div class="brand-copy">
+              <span>El Portal Brasileño</span>
+              <strong>Presentación estratégica privada</strong>
+              <p>Una propuesta comercial y visual pensada para vender mejor, con una estética más limpia y premium.</p>
+            </div>
+          </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s2">
+      <div class="shell panel">
+        <div class="card">
+          <div class="slide-title">
+            <h2>1. Diagnóstico</h2>
+            <p>Primero ubicamos la marca en contexto: negocio, aliado comercial, audiencia y sede.</p>
+          </div>
+          <div class="grid-2">
+            <div class="stack">
+              <div class="mini"><strong>Qué es</strong><span class="muted">El Portal Brasileño es un restaurante de comida rápida premium y saludable con dos sedes en Bogotá.</span></div>
+              <div class="mini"><strong>Aliado</strong><span class="muted">Brasilena respalda la línea de carnes frías y ayuda a comunicar origen y confianza.</span></div>
+              <div class="mini"><strong>Cliente ideal</strong><span class="muted">Personas de 25 a 50 años, estrato 3 y 4, que compran almuerzo o comida para la casa.</span></div>
+            </div>
+            <div class="image tall">
+              <img src="../productos fotos/unnamed.webp" alt="Producto héroe de El Portal Brasileño">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s3">
+      <div class="shell panel">
+        <div class="card">
+          <div class="slide-title">
+            <h2>2. Evidencia</h2>
+            <p>Mostramos lo que ya existe: logo viejo, transición, logo final, Instagram y Rappi.</p>
+          </div>
+          <div class="grid-3" style="margin-bottom:18px">
+            <div class="image square"><img src="./assets/logo-viejo-referencia.webp" alt="Logo viejo"></div>
+            <div class="image square"><img src="./assets/logo-reformando.png" alt="Logo en transición"></div>
+            <div class="image square"><img src="./assets/logo-aprobado.png" alt="Logo aprobado"></div>
+          </div>
+          <div class="grid-2">
+            <div class="mini">
+              <strong>Instagram actual</strong>
+              <span class="muted">La captura muestra 23 publicaciones, 101 seguidores y 36 seguidos. Sirve perfecto para justificar el cambio de estrategia.</span>
+            </div>
+            <div class="mini">
+              <strong>Rappi actual</strong>
+              <span class="muted">Ya hay presencia en Rappi como El Portal Brasileño, así que el trabajo es optimizar catálogo, precios e imágenes.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s4">
+      <div class="shell panel">
+        <div class="card">
+          <div class="slide-title">
+            <h2>3. Competencia y entorno</h2>
+            <p>Subazar tiene competencia a pocos metros. Aquí mostramos dos mapas cortos para que se entienda rápido dónde estamos parados y por qué la pauta local debe ser precisa.</p>
+          </div>
+          <div class="grid-2">
+            <div class="mini map-card">
+              <strong>Influencias directas - Local 1 Subazar</strong>
+              <span class="muted">Vista rápida de la presión comercial inmediata alrededor de la sede: flujo, restaurantes y marcas vecinas.</span>
+              <div class="image map-shot">
+                <img src="./assets/subazar-influencia-directa.png" alt="Mapa local 1 con influencia directa en Subazar">
+              </div>
+            </div>
+            <div class="mini map-card">
+              <strong>Competencia cercana - Local 2 Subazar</strong>
+              <span class="muted">Radio competitivo más cercano para explicar por qué la pauta local debe ser precisa y muy bien segmentada.</span>
+              <ul class="list">
+                <li>Subway Subazar</li>
+                <li>KFC Hamburguesas en Subazar</li>
+                <li>Zona Burger Suba</li>
+                <li>McDonald's Suba</li>
+              </ul>
+              <div class="image map-shot">
+                <img src="./assets/subazar-competencia-cercana.png" alt="Mapa local 2 con competencia cercana a la sede">
+              </div>
+            </div>
+          </div>
+          <div class="mini" style="margin-top:18px">
+            <strong>Lectura rápida</strong>
+            <span class="muted">Esta captura convierte el diagnóstico en evidencia real: no solo decimos que hay competencia, sino que la mostramos alrededor de la sede.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s6">
+      <div class="shell panel">
+        <div class="card">
+          <div class="slide-title">
+            <h2>4. Propuesta de pauta</h2>
+            <p>Estas son piezas que sí se pueden mostrar como dirección creativa de campaña.</p>
+          </div>
+          <div class="grid-4" style="margin-bottom:18px">
+            <div class="image"><img src="./assets/pauta-1.png" alt="Propuesta de pauta jueves de combos"></div>
+            <div class="image"><img src="./assets/pauta-2.png" alt="Propuesta de pauta reunión en amigos"></div>
+            <div class="image"><img src="./assets/pauta-3.png" alt="Propuesta de pauta combos futboleros"></div>
+            <div class="image"><img src="./assets/pauta-4.png" alt="Propuesta de pauta combos futboleros amigos"></div>
+          </div>
+          <div class="grid-2" style="margin-top:18px">
+            <div class="mini"><strong>Cómo se usarían</strong><span class="muted">Stories, Reels y TikTok Ads para temporadas, combos y promociones semanales.</span></div>
+            <div class="mini"><strong>Qué resuelven</strong><span class="muted">Muestran tono, estética y capacidad de convertir promociones en piezas vendibles.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s7">
+      <div class="shell panel">
+        <div class="card">
+          <div class="slide-title">
+            <h2>5. Pauta de la tarde</h2>
+            <p>Estas piezas funcionan muy bien en horas valle, cuando conviene recordar la marca, abrir apetito y empujar consumo programado.</p>
+          </div>
+          <div class="grid-3" style="margin-bottom:18px">
+            <div class="image"><img src="./assets/descanso-1.png" alt="Pieza de pauta para hora de descanso"></div>
+            <div class="image"><img src="./assets/descanso-2.png" alt="Pieza de pauta para domicilios a la oficina"></div>
+            <div class="image"><img src="./assets/descanso-3.png" alt="Pieza de pauta para descanso sin salir de la oficina"></div>
+          </div>
+          <div class="grid-2">
+            <div class="mini">
+              <strong>Cuándo usarlas</strong>
+              <span class="muted">Entre picos de almuerzo y cena, cuando conviene recordar la marca y abrir apetito sin pedir cierre inmediato.</span>
+            </div>
+            <div class="mini">
+              <strong>Qué hacen</strong>
+              <span class="muted">Hablan de descanso, oficina y conveniencia, que es justo el tipo de mensaje que activa horas valle.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s8">
+      <div class="shell panel">
+        <div class="card">
+          <div class="slide-title">
+            <h2>6. Pauta de la mañana</h2>
+            <p>Estos anuncios ayudan a arrancar el día con desayunos, proteína y café: muy útiles para oficina y primera compra.</p>
+          </div>
+          <div class="grid-3" style="margin-bottom:18px">
+            <div class="image"><img src="./assets/desayuno-1.png" alt="Anuncio de desayuno y café uno"></div>
+            <div class="image"><img src="./assets/desayuno-2.png" alt="Anuncio de desayuno y café dos"></div>
+            <div class="image"><img src="./assets/desayuno-3.png" alt="Anuncio de desayuno y café tres"></div>
+          </div>
+          <div class="grid-2">
+            <div class="mini">
+              <strong>Objetivo de mañana</strong>
+              <span class="muted">Captar a la gente temprano con mensaje de desayuno, proteína y café para abrir compra antes del almuerzo.</span>
+            </div>
+            <div class="mini">
+              <strong>Encaje comercial</strong>
+              <span class="muted">Funciona para oficinas, personas de paso y clientes que buscan algo rápido antes de empezar el día.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s9">
+      <div class="shell panel">
+        <div class="card">
+          <div class="slide-title">
+            <h2>7. Horas pico y horas valle</h2>
+            <p>La pauta cambia según la intención de compra. En pico cerramos, en valle sembramos demanda.</p>
+          </div>
+          <div class="timeline">
+            <div class="timeline-track" aria-label="Línea de tiempo de pauta por horario">
+              <div class="timeline-point">
+                <div class="timeline-dot amber"></div>
+                <strong>9:00 a. m.</strong>
+                <span>Apertura<br>desayuno y café</span>
+              </div>
+              <div class="timeline-point">
+                <div class="timeline-dot amber"></div>
+                <strong>11:00 a. m.</strong>
+                <span>Pico 1<br>venta activa</span>
+              </div>
+              <div class="timeline-point">
+                <div class="timeline-dot"></div>
+                <strong>1:30 p. m.</strong>
+                <span>Valle<br>sembrar demanda</span>
+              </div>
+              <div class="timeline-point">
+                <div class="timeline-dot red"></div>
+                <strong>5:00 p. m.</strong>
+                <span>Pico 2<br>cierre y conversión</span>
+              </div>
+              <div class="timeline-point">
+                <div class="timeline-dot red"></div>
+                <strong>8:00 p. m.</strong>
+                <span>Último empuje<br>cierre del día</span>
+              </div>
+            </div>
+            <div class="timeline-legend">
+              <span class="legend-chip"><i class="legend-swatch amber"></i>Horas pico: empujar conversión</span>
+              <span class="legend-chip"><i class="legend-swatch muted"></i>Horas valle: mantener presencia</span>
+              <span class="legend-chip"><i class="legend-swatch red"></i>Momento fuerte: maximizar ventas</span>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="mini">
+              <strong>En pico mostramos</strong>
+              <span class="muted">Piezas como Jueves de combos, Reúnete en amigos y Combos futboleros para empujar la acción inmediata.</span>
+            </div>
+            <div class="mini">
+              <strong>En valle mostramos</strong>
+              <span class="muted">Creativos de marca, producto y deseo para mantener presencia y alimentar el algoritmo.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="s10">
+      <div class="shell panel">
+        <div class="card">
+          <div class="slide-title">
+            <h2>8. Método y presupuesto</h2>
+            <p>Primero estrategia, luego ejecución y al final inversión.</p>
+          </div>
+          <div class="grid-2">
+            <div class="stack">
+              <div class="mini"><strong>Metodología</strong><span class="muted">Diagnóstico → evidencia → implementación → creativos.</span></div>
+              <div class="mini"><strong>Canales</strong><span class="muted">Instagram, Google, Google Maps, Rappi y WordPress con carrito, bot y pasarela.</span></div>
+              <div class="mini"><strong>Plan</strong><span class="muted">SEO local, contenido comercial, pauta en horas pico y horas valle, y web editable.</span></div>
+            </div>
+            <div>
+              <div class="price">
+                <div class="item"><strong>Valor total de la propuesta</strong><span>$15.000.000 COP</span></div>
+                <div class="item"><strong>Tiempo de ejecución</strong><span>3 meses</span></div>
+                <div class="item"><strong>Administración de pauta</strong><span>Incluida dentro del plan estratégico</span></div>
+              </div>
+              <div class="cta">
+                <a class="btn primary" href="https://wa.me/573059248921" target="_blank" rel="noreferrer">Abrir WhatsApp</a>
+                <a class="btn secondary" href="/" rel="noreferrer">Volver al sitio</a>
+              </div>
+            </div>
+          </div>
+          <p class="muted" style="margin-top:18px">La propuesta deja de ser presupuesto suelto y pasa a ser una presentación de estrategia completa, con ejecución definida en 3 meses.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script type="module">
+    import { animate, stagger } from "https://cdn.jsdelivr.net/npm/motion@11.13.5/+esm";
+
+    // La portada permanece visible aunque Motion no cargue. La libreria solo suma movimiento.
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const frame = document.querySelector('[data-motion="video-frame"]');
+      const copyItems = document.querySelectorAll('[data-motion="hero-copy"] > *');
+      const video = document.querySelector('.proposal-hero-video');
+      const orbit = document.querySelector('[data-motion="orbit"]');
+
+      if (frame) {
+        animate(frame, { opacity: [.82, 1], y: [22, 0], scale: [.98, 1] }, {
+          duration: .85,
+          easing: [0.16, 1, 0.3, 1]
+        });
+      }
+
+      if (copyItems.length) {
+        animate(copyItems, { opacity: [.72, 1], y: [14, 0] }, {
+          delay: stagger(.09),
+          duration: .66,
+          easing: [0.16, 1, 0.3, 1]
+        });
+      }
+
+      if (video) {
+        animate(video, { scale: [1.11, 1.035] }, {
+          duration: 1.8,
+          easing: [0.16, 1, 0.3, 1]
+        });
+      }
+
+      if (orbit) {
+        animate(orbit, { rotate: 360 }, { duration: 28, repeat: Infinity, easing: "linear" });
+      }
+    }
+  </script>
+</body>
+</html>

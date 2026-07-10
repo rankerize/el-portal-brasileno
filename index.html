@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="El Portal Brasileño en Suba y Ciudad Montes, Bogotá. Comida rápida premium y saludable a precios cómodos: sándwiches de jamón artesanal, hamburguesas brasileñas, perros calientes, combos con papas y gaseosa, y salchipapas especiales. Más de 5 años de máxima calidad.">
+  <meta name="keywords" content="El Portal Brasileño, comida rapida saludable, sandwiches bogota, hamburguesas suba, salchipapas bogota, comida rapida premium, subazar, jamon artesanal, comida rapida suba">
+  <meta name="author" content="El Portal Brasileño">
+  <title>El Portal Brasileño | Comida Rápida Premium y Saludable en Bogotá</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="productos fotos/logo-nuevo.png">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="style.css?v=20260709-2025">
+</head>
+<body>
+
+  <!-- Barra de Promoción Superior (Fija) -->
+  <div class="top-promo-bar">
+    <span>⚽ <strong>¡Combos Futboleros!</strong> Pide hoy tu combo favorito y reclama tu Raspa y Gana virtual ⚽</span>
+  </div>
+
+  <!-- Cabecera y Navbar -->
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo-container">
+        <img src="productos fotos/logo-nuevo-crop.png" alt="El Portal Brasileño" class="logo-image">
+      </a>
+
+      <!-- Navegación Escritorio -->
+      <ul class="nav-links" id="nav-links-list">
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#menu">Productos</a></li>
+        <li><a href="#recipes">Recetas</a></li>
+        <li><a href="#about">Por Qué Elegirnos</a></li>
+        <li><a href="#location">Ubicación</a></li>
+      </ul>
+
+      <!-- Acciones de Cabecera -->
+      <div class="navbar-actions">
+
+
+        <!-- Icono Carrito -->
+        <div class="cart-icon-container" id="cart-icon-btn" aria-label="Ver carrito de compras">
+          <i class="fas fa-shopping-basket" style="font-size: 1.25rem;"></i>
+          <span class="cart-count" id="cart-count">0</span>
+        </div>
+
+        <!-- Botón Pedir en Línea -->
+        <a href="#menu" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.95rem;">Pedir en Línea</a>
+
+        <!-- Trigger Menú Móvil -->
+        <button class="nav-trigger" id="nav-trigger-btn" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-links-list">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sección Hero -->
+  <section class="hero" id="hero" data-motion="site-hero">
+    <video class="hero-video-bg" autoplay muted loop playsinline preload="metadata" poster="Fotos producidas/magnific_foto-profesional-de-este-_rlHn4Ypxtc.png" data-motion="hero-video">
+      <source src="Fotos producidas/video hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay" data-motion="hero-overlay"></div>
+    <div class="container hero-container">
+      <div class="hero-content" data-motion="hero-frame">
+        <span class="badge" data-motion="hero-item">
+          <i class="fas fa-certificate"></i> Más de 5 años de sabor y frescura
+        </span>
+        <h1 class="hero-title" data-motion="hero-item">Comida Rápida <span>Premium</span> y Saludable</h1>
+        <p class="hero-desc" data-motion="hero-item">
+          Disfruta de nuestros sándwiches, hamburguesas y perros calientes, elaborados con <strong>jamones artesanales de máxima calidad</strong>, vegetales frescos del día y precios cómodos. ¡Sabor real que cuida de ti!
+        </p>
+        <div class="hero-buttons" data-motion="hero-item">
+          <a href="#menu" class="btn btn-primary">Ver Menú Completo</a>
+          <a href="#about" class="btn btn-outline-light">Nuestra Historia</a>
+        </div>
+      </div>
+      <a class="hero-scroll-cue" href="#menu" data-motion="hero-cue" aria-label="Deslizar hacia el menú">
+        <span>Desliza para descubrir</span>
+        <i class="fas fa-arrow-down" aria-hidden="true"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Sección Productos -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Productos para <span>Comer y Llevar</span></h2>
+        <p class="section-subtitle">
+          Primero lo que se come al momento y al final lo que se lleva a casa: sándwiches, hamburguesas, perros, combos, especiales y carnes frías.
+        </p>
+      </div>
+
+      <div class="menu-intro-chips" aria-label="Tipos de producto">
+        <span class="menu-intro-chip">Para comer aquí</span>
+        <span class="menu-intro-chip">Para llevar</span>
+        <span class="menu-intro-chip">Carnes frías</span>
+      </div>
+
+      <!-- Filtros de Categorías -->
+      <div class="menu-filters" role="group" aria-label="Filtrar productos por categoría">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">Todos los Productos</button>
+        <button class="filter-btn" data-filter="sandwiches" aria-pressed="false">Sándwiches</button>
+        <button class="filter-btn" data-filter="hamburguesas" aria-pressed="false">Hamburguesas</button>
+        <button class="filter-btn" data-filter="perros" aria-pressed="false">Perros Calientes</button>
+        <button class="filter-btn" data-filter="combos" aria-pressed="false">Combos</button>
+        <button class="filter-btn" data-filter="especiales" aria-pressed="false">Platos y Especiales</button>
+        <button class="filter-btn" data-filter="carnes-frias" aria-pressed="false">Carnes Frías La Brasileña</button>
+      </div>
+
+      <div class="menu-grid" id="menu-grid">
+        <!-- Renderizado dinámico desde app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner Promocional Futbolero (El Portal) -->
+  <section class="promo-futbol-section" style="padding: 60px 0 0 0;">
+    <div class="container">
+      <div class="futbol-banner">
+        <div class="futbol-content">
+          <span class="futbol-badge"><i class="fas fa-futbol"></i> Temporada de Fútbol</span>
+          <h2 class="futbol-title">Pide tus <span>Combos Futboleros</span></h2>
+          <p class="futbol-desc">
+            Acompaña cada partido con el mejor sabor de nuestros sándwiches, hamburguesas jugosas y papas crujientes. ¡Haz tu pedido hoy y reclama un <strong>Raspa y Gana</strong> virtual con beneficios y premios sorpresa!
+          </p>
+          <a href="#menu" class="btn btn-primary futbol-btn">⚽ ¡Pide tu Combo Aquí!</a>
+        </div>
+        <div class="futbol-graphics">
+          <div class="promo-ticket">
+            <div class="ticket-header">Raspa y Gana</div>
+            <div class="ticket-body">
+              <p style="font-size: 0.8rem; text-transform: uppercase;">Descubre tu premio</p>
+              <h4 style="color: #1e1e1e;">¡TODOS PREMIADOS!</h4>
+            </div>
+            <div class="ticket-footer">Con tu Combo Futbolero</div>
+          </div>
+          <!-- SVG Balón de Fútbol Vectorial -->
+          <svg class="ball-img" viewBox="0 0 100 100" width="80" height="80">
+            <circle cx="50" cy="50" r="48" fill="#ffffff" stroke="#1e1e1e" stroke-width="4"/>
+            <polygon points="50,30 35,40 38,58 62,58 65,40" fill="#1e1e1e"/>
+            <polygon points="50,30 50,2 73,12 65,40" fill="none" stroke="#1e1e1e" stroke-width="3"/>
+            <polygon points="50,30 50,2 27,12 35,40" fill="none" stroke="#1e1e1e" stroke-width="3"/>
+            <polygon points="35,40 10,40 18,63 38,58" fill="none" stroke="#1e1e1e" stroke-width="3"/>
+            <polygon points="65,40 90,40 82,63 62,58" fill="none" stroke="#1e1e1e" stroke-width="3"/>
+            <polygon points="38,58 18,63 28,88 50,88" fill="none" stroke="#1e1e1e" stroke-width="3"/>
+            <polygon points="62,58 82,63 72,88 50,88" fill="none" stroke="#1e1e1e" stroke-width="3"/>
+            <circle cx="50" cy="50" r="48" fill="none" stroke="#1e1e1e" stroke-width="4"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Sobre Nosotros / Historia -->
+  <section class="about-section" id="about">
+    <div class="container about-grid">
+      <div class="about-img-collage">
+        <img src="productos fotos/about-main-premium.png" alt="Sandwich premium de El Portal Brasileño" class="about-img-main" loading="lazy" width="1200" height="800">
+        <img src="productos fotos/about-sub-premium.png" alt="Sandwich premium de El Portal Brasileño en otra toma" class="about-img-sub" loading="lazy" width="1200" height="800">
+      </div>
+      <div class="about-text">
+        <span class="badge" style="background-color: var(--color-primary-hover); color: #fff;">
+          Desde hace más de 5 años
+        </span>
+        <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">Comer Rápido, Pero <span>Comer Bien</span></h2>
+        <div class="about-tag">"La salud y el sabor pueden ir de la mano."</div>
+        <p>
+          En <strong>El Portal Brasileño</strong>, redefinimos el concepto de comida rápida en Bogotá. Creemos que el tiempo no debe ser un obstáculo para alimentarse bien. Por eso, durante más de 5 años, nos hemos especializado en ofrecer sándwiches y platos rápidos con ingredientes sumamente saludables y limpios.
+        </p>
+        <p>
+          El gran secreto de nuestro local es la calidad de nuestros <strong>jamones artesanales</strong>, que son seleccionados para garantizar un sabor intenso pero con un menor contenido de sodio y grasa. Junto a panes recién horneados y vegetales frescos del día, creamos una experiencia gastronómica premium y accesible para todos.
+        </p>
+        <a href="#menu" class="btn btn-secondary">Quiero Probar el Sabor Real</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Recetas -->
+  <section class="recipes-section" id="recipes">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Recetario con <span>URLs propias</span></h2>
+        <p class="section-subtitle">
+          Cada receta debe vivir en su propia URL, atacar una keyword distinta y enlazar a los productos mencionados para llevar tráfico calificado al menú.
+        </p>
+      </div>
+
+      <div class="recipes-grid">
+        <article class="recipe-card">
+          <div class="recipe-image-wrap">
+            <img src="productos fotos/receta-desayuno-jamon-pavo.png" alt="Desayuno con jamón de pavo, queso y vegetales" class="recipe-image" loading="lazy" width="1672" height="941">
+            <span class="recipe-badge">Desayuno</span>
+          </div>
+          <div class="recipe-content">
+            <h3>Desayuno fresco de jamón de pavo</h3>
+            <p class="recipe-summary">
+              Keyword objetivo: <strong>desayuno con jamón de pavo</strong>. Una receta suave, fresca y nutritiva para arrancar el día.
+            </p>
+            <div class="recipe-meta">
+              <span><i class="fas fa-clock"></i> 10 min</span>
+              <span><i class="fas fa-utensils"></i> 2 porciones</span>
+            </div>
+            <div class="recipe-links">
+              <a href="/recetas/desayuno-jamon-de-pavo" class="btn btn-secondary">Ver receta</a>
+              <a href="/menu/sandwich-jamon-pavo" class="btn btn-outline">Ver producto</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="recipe-card">
+          <div class="recipe-image-wrap">
+            <img src="productos fotos/receta-lunch-jamon-pavo.png" alt="Lunch de jamón de pavo para la oficina" class="recipe-image" loading="lazy" width="1672" height="941">
+            <span class="recipe-badge">Lunch</span>
+          </div>
+          <div class="recipe-content">
+            <h3>Lunch práctico de jamón de pavo para la oficina</h3>
+            <p class="recipe-summary">
+              Keyword objetivo: <strong>lunch con jamón de pavo para oficina</strong>. Una opción más contundente, ideal para llevar al trabajo.
+            </p>
+            <div class="recipe-meta">
+              <span><i class="fas fa-clock"></i> 12 min</span>
+              <span><i class="fas fa-briefcase"></i> Para llevar</span>
+            </div>
+            <div class="recipe-links">
+              <a href="/recetas/lunch-jamon-de-pavo-oficina" class="btn btn-secondary">Ver receta</a>
+              <a href="/menu/sandwich-jamon-pavo" class="btn btn-outline">Ver producto</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Ubicación, Mapa y Contacto -->
+  <section class="location-section" id="location">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Encuéntranos en <span>Bogotá</span></h2>
+        <p class="section-subtitle">Visítanos en cualquiera de nuestras dos sedes o comunícate con nosotros para hacer tu pedido a domicilio.</p>
+      </div>
+
+      <!-- Sedes del Restaurante cargadas dinámicamente desde WordPress -->
+      <div id="sedes-container"></div>
+    </div>
+  </section>
+
+  <!-- Sección Pilares / Características del Negocio -->
+  <section class="features" id="features">
+    <div class="container features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+        <h3>Saludable y Fresco</h3>
+        <p>Procesos limpios, vegetales del día y jamones artesanales bajos en grasa y sodio.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-piggy-bank"></i></div>
+        <h3>Precios Cómodos</h3>
+        <p>Una relación calidad-precio inmejorable. Comida premium al alcance de tu bolsillo.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-award"></i></div>
+        <h3>Máxima Calidad</h3>
+        <p>Jamón de pierna y embutidos seleccionados meticulosamente para un sabor superior.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-heart"></i></div>
+        <h3>Más de 5 Años</h3>
+        <p>Trayectoria y confianza sirviendo con pasión a la comunidad de Suba, Bogotá.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pie de Página -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="productos fotos/logo-nuevo-crop.png" alt="El Portal Brasileño" class="logo-image logo-image-footer">
+        <p>Sabor brasileño y local, con jamones artesanales de la mejor calidad y procesos saludables. Sirviendo con orgullo en Bogotá.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Enlaces Rápidos</h4>
+        <ul>
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#menu">Productos</a></li>
+          <li><a href="#recipes">Recetas</a></li>
+          <li><a href="#about">Por Qué Elegirnos</a></li>
+          <li><a href="#location">Ubicación</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contáctanos</h4>
+        <p><i class="fas fa-map-marker-alt" style="color: var(--color-primary); margin-right: 8px;"></i> CC Subazar, Suba, Bogotá</p>
+        <p><i class="fas fa-map-marker-alt" style="color: var(--color-primary); margin-right: 8px;"></i> Ciudad Montes, Bogotá</p>
+        <p><i class="fas fa-phone-alt" style="color: var(--color-primary); margin-right: 8px;"></i> 305 9248921</p>
+        <p><i class="fas fa-envelope" style="color: var(--color-primary); margin-right: 8px;"></i> contacto@elportalbrasileno.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 El Portal Brasileño. Todos los derechos reservados. Diseñado con ❤️ para Bogotá.</p>
+    </div>
+  </footer>
+
+  <!-- Drawer / Panel Lateral del Carrito -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-drawer-title">
+    <div class="cart-header">
+      <h3 id="cart-drawer-title">Tu Pedido</h3>
+      <button class="close-cart" id="close-cart" aria-label="Cerrar carrito"><i class="fas fa-times" aria-hidden="true"></i></button>
+    </div>
+    
+    <!-- Contenedor dinámico de productos del carrito -->
+    <div class="cart-items-container" id="cart-items-container">
+      <!-- Se inyecta por JS -->
+    </div>
+    
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Total:</span>
+        <span id="cart-total" aria-live="polite">$0</span>
+      </div>
+      <button class="btn btn-secondary" id="whatsapp-order-btn" style="width: 100%; border-radius: var(--radius-md); padding: 14px 20px;">
+        <i class="fab fa-whatsapp" style="font-size: 1.25rem; margin-right: 8px;"></i> Enviar Pedido por WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal de Detalle de Producto -->
+  <div class="modal-overlay" id="product-modal-overlay">
+    <div class="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="close-modal" id="close-modal" aria-label="Cerrar detalle"><i class="fas fa-times" aria-hidden="true"></i></button>
+      <div class="modal-img-container">
+        <img src="" alt="" class="modal-img" id="modal-image">
+      </div>
+      <div class="modal-content">
+        <div class="modal-title">
+          <h3 id="modal-title">Nombre del Producto</h3>
+          <span class="badge" style="background-color: rgba(242, 184, 0, 0.14); color: var(--color-dark);">Premium</span>
+          <p class="modal-desc" id="modal-description">Detalles del producto aquí...</p>
+        </div>
+        
+        <div>
+          <div class="modal-price-row" style="margin-bottom: 20px;">
+            <span style="font-size: 0.9rem; color: var(--color-gray-text);">Precio unitario:</span>
+            <div id="modal-price" style="font-size: 1.6rem; font-weight: 700; color: var(--color-red);">0</div>
+          </div>
+          
+          <div class="modal-details" id="modal-details-list">
+            <!-- Detalles extras inyectados por JS -->
+          </div>
+          
+          <button class="btn btn-primary" id="modal-action-btn" style="width: 100%; margin-top: 24px; border-radius: var(--radius-md);">
+            <i class="fas fa-shopping-basket" style="margin-right: 8px;"></i> Agregar al Pedido
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts JavaScript -->
+  <script src="cms.js?v=20260709-1645"></script>
+  <script src="app.js?v=20260709-2025"></script>
+  <script type="module" src="motion-hero.js?v=20260709-2025"></script>
+</body>
+</html>
