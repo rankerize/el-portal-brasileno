@@ -98,6 +98,22 @@
       backdrop-filter:blur(14px);
       overflow:hidden;
     }
+    .diagnostico-charts {
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 32px;
+      height: 100%;
+    }
+    .chart-box {
+      width: 100%;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    }
     .hero{
       display:grid;
       grid-template-columns:1.1fr .9fr;
@@ -700,13 +716,12 @@
   <nav class="nav" aria-label="Secciones">
     <a href="#s1">1</a>
     <a href="#s2">2</a>
-    <a href="#s3">3</a>
-    <a href="#s4">4</a>
-    <a href="#s6">5</a>
-    <a href="#s7">6</a>
-    <a href="#s8">7</a>
-    <a href="#s9">8</a>
-    <a href="#s10">9</a>
+    <a href="#s4">3</a>
+    <a href="#s6">4</a>
+    <a href="#s7">5</a>
+    <a href="#s8">6</a>
+    <a href="#s9">7</a>
+    <a href="#s10">8</a>
   </nav>
 
   <main class="deck">
@@ -758,43 +773,97 @@
           <div class="slide-title">
             <h2>1. Diagnóstico</h2>
             <p>Primero ubicamos la marca en contexto: negocio, aliado comercial, audiencia y sede.</p>
-          </div>
           <div class="grid-2">
             <div class="stack">
-              <div class="mini"><strong>Qué es</strong><span class="muted">El Portal Brasileño es un restaurante de comida rápida premium y saludable con dos sedes en Bogotá.</span></div>
-              <div class="mini"><strong>Cliente ideal</strong><span class="muted">Personas de 25 a 50 años, estrato 3 y 4, que compran almuerzo o comida para llevar a casa.</span></div>
-              <div class="mini"><strong>Tráfico Peatonal y Anclas</strong><span class="muted">Flujo masivo impulsado por transbordo de TransMilenio y anclas comerciales con alto tráfico (ej. Bancolombia en Subazar, que atrae personas con efectivo/tarjetas en mano). Picos a las 12 p.m. (almuerzo) y 5 p.m. - 7 p.m. (regreso).</span></div>
-              <div class="mini"><strong>Potencial de Pauta</strong><span class="muted">Activar anuncios hiper-locales en un radio de 1 km justo antes de los picos. El objetivo es interceptar tanto al viajero de TransMilenio como al usuario del banco en su momento de mayor intención de consumo.</span></div>
+              <div class="mini"><strong>Sede Subazar (Norte)</strong><span class="muted">Ubicación de flujo peatonal masivo frente a TransMilenio (Trans. 91). Tráfico altamente transaccional impulsado por anclas como Bancolombia (personas con efectivo/tarjetas en mano). Picos: 12 p.m. y 5-7 p.m.</span></div>
+              <div class="mini"><strong>Sede Ciudad Montes (Sur)</strong><span class="muted">Alta influencia familiar y residencial con gran afluencia de estratos 2, 3 y 4. Punto estratégico de alto tránsito vehicular y de paso al converger con la Av. NQS (30), Av. 1 de Mayo y Diagonal 16 Sur.</span></div>
+              <div class="mini"><strong>Presencia Digital (Instagram & Rappi)</strong><span class="muted">Perfil de Instagram actual con baja actividad (23 posts, 101 seguidores) que requiere pauta de Reels, y presencia activa en Rappi que necesita optimización urgente de catálogo, precios y fotos oficiales.</span></div>
+              <div class="mini"><strong>Experiencia de Marca</strong><span class="muted">Transición del logo dorado anterior al logotipo definitivo aprobado por el dueño (pan amarillo/oro, tipografía bold en negro y acento verde), elevando el estándar de marca a un nivel luxury y formal.</span></div>
             </div>
-            <div class="image tall">
-              <img src="../productos fotos/unnamed.webp" alt="Producto héroe de El Portal Brasileño">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+            <div class="diagnostico-charts">
+              <!-- Gráfico 1: Tipo de Cliente (Audiencia) -->
+              <div class="chart-box">
+                <h4 style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 14px 0; font-weight: 700; color: var(--text);">Tipo de Cliente (Audiencia)</h4>
+                
+                <div style="margin-bottom: 12px;">
+                  <div style="display: flex; justify-content: space-between; font-size: 0.82rem; font-weight: 600; margin-bottom: 4px;">
+                    <span>Familias / Hogares (Sur - Montes)</span>
+                    <span style="color: var(--primary);">55%</span>
+                  </div>
+                  <div style="width: 100%; height: 6px; background: rgba(26,26,26,0.06); border-radius: 3px; overflow: hidden;">
+                    <div style="width: 55%; height: 100%; background: var(--primary); border-radius: 3px;"></div>
+                  </div>
+                </div>
 
-    <section class="slide" id="s3">
-      <div class="shell panel">
-        <div class="card">
-          <div class="slide-title">
-            <h2>2. Evidencia</h2>
-            <p>Mostramos lo que ya existe: logo viejo, transición, logo final, Instagram y Rappi.</p>
-          </div>
-          <div class="grid-3" style="margin-bottom:18px">
-            <div class="image square"><img src="./assets/logo-viejo-referencia.webp" alt="Logo viejo"></div>
-            <div class="image square"><img src="./assets/logo-reformando.png" alt="Logo en transición"></div>
-            <div class="image square"><img src="./assets/logo-aprobado.png" alt="Logo aprobado"></div>
-          </div>
-          <div class="grid-2">
-            <div class="mini">
-              <strong>Instagram actual</strong>
-              <span class="muted">La captura muestra 23 publicaciones, 101 seguidores y 36 seguidos. Sirve perfecto para justificar el cambio de estrategia.</span>
+                <div>
+                  <div style="display: flex; justify-content: space-between; font-size: 0.82rem; font-weight: 600; margin-bottom: 4px;">
+                    <span>Commuters / Empleados (Norte - Subazar)</span>
+                    <span style="color: var(--text);">45%</span>
+                  </div>
+                  <div style="width: 100%; height: 6px; background: rgba(26,26,26,0.06); border-radius: 3px; overflow: hidden;">
+                    <div style="width: 45%; height: 100%; background: var(--text); border-radius: 3px;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Gráfico 2: Concurrencia de Subazar -->
+              <div class="chart-box">
+                <h4 style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 14px 0; font-weight: 700; color: var(--text);">Tráfico Peatonal en Sede Subazar</h4>
+                <div style="display: flex; align-items: flex-end; justify-content: space-between; height: 90px; padding-top: 10px; border-bottom: 1px solid var(--border);">
+                  <!-- 9am -->
+                  <div style="display: flex; flex-direction: column; align-items: center; width: 8%;">
+                    <div style="width: 100%; height: 20%; background: rgba(26,26,26,0.12); border-radius: 2px 2px 0 0;"></div>
+                    <span style="font-size: 0.6rem; color: var(--muted); margin-top: 4px;">9a</span>
+                  </div>
+                  <!-- 11am -->
+                  <div style="display: flex; flex-direction: column; align-items: center; width: 8%;">
+                    <div style="width: 100%; height: 45%; background: rgba(26,26,26,0.12); border-radius: 2px 2px 0 0;"></div>
+                    <span style="font-size: 0.6rem; color: var(--muted); margin-top: 4px;">11a</span>
+                  </div>
+                  <!-- 12pm (Pico 1 - Almuerzo - Rojo) -->
+                  <div style="display: flex; flex-direction: column; align-items: center; width: 8%;">
+                    <div style="width: 100%; height: 75%; background: var(--accent-2); border-radius: 2px 2px 0 0; box-shadow: 0 3px 8px rgba(224,59,58,0.2);"></div>
+                    <span style="font-size: 0.6rem; color: var(--accent-2); font-weight: 700; margin-top: 4px;">12p</span>
+                  </div>
+                  <!-- 1pm -->
+                  <div style="display: flex; flex-direction: column; align-items: center; width: 8%;">
+                    <div style="width: 100%; height: 55%; background: rgba(26,26,26,0.12); border-radius: 2px 2px 0 0;"></div>
+                    <span style="font-size: 0.6rem; color: var(--muted); margin-top: 4px;">1p</span>
+                  </div>
+                  <!-- 3pm -->
+                  <div style="display: flex; flex-direction: column; align-items: center; width: 8%;">
+                    <div style="width: 100%; height: 60%; background: rgba(26,26,26,0.12); border-radius: 2px 2px 0 0;"></div>
+                    <span style="font-size: 0.6rem; color: var(--muted); margin-top: 4px;">3p</span>
+                  </div>
+                  <!-- 5pm (Pico 2 - Regreso) -->
+                  <div style="display: flex; flex-direction: column; align-items: center; width: 8%;">
+                    <div style="width: 100%; height: 80%; background: var(--primary); border-radius: 2px 2px 0 0; box-shadow: 0 3px 8px rgba(242,184,0,0.25);"></div>
+                    <span style="font-size: 0.6rem; color: var(--primary); font-weight: 700; margin-top: 4px;">5p</span>
+                  </div>
+                  <!-- 6pm (Pico Máximo) -->
+                  <div style="display: flex; flex-direction: column; align-items: center; width: 8%;">
+                    <div style="width: 100%; height: 95%; background: var(--primary); border-radius: 2px 2px 0 0; box-shadow: 0 3px 8px rgba(242,184,0,0.25);"></div>
+                    <span style="font-size: 0.6rem; color: var(--primary); font-weight: 700; margin-top: 4px;">6p</span>
+                  </div>
+                  <!-- 7pm -->
+                  <div style="display: flex; flex-direction: column; align-items: center; width: 8%;">
+                    <div style="width: 100%; height: 82%; background: rgba(26,26,26,0.12); border-radius: 2px 2px 0 0;"></div>
+                    <span style="font-size: 0.6rem; color: var(--muted); margin-top: 4px;">7p</span>
+                  </div>
+                  <!-- 8pm -->
+                  <div style="display: flex; flex-direction: column; align-items: center; width: 8%;">
+                    <div style="width: 100%; height: 68%; background: rgba(26,26,26,0.12); border-radius: 2px 2px 0 0;"></div>
+                    <span style="font-size: 0.6rem; color: var(--muted); margin-top: 4px;">8p</span>
+                  </div>
+                  <!-- 9pm -->
+                  <div style="display: flex; flex-direction: column; align-items: center; width: 8%;">
+                    <div style="width: 100%; height: 40%; background: rgba(26,26,26,0.12); border-radius: 2px 2px 0 0;"></div>
+                    <span style="font-size: 0.6rem; color: var(--muted); margin-top: 4px;">9p</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="mini">
-              <strong>Rappi actual</strong>
-              <span class="muted">Ya hay presencia en Rappi como El Portal Brasileño, así que el trabajo es optimizar catálogo, precios e imágenes.</span>
-            </div>
+          </div>
           </div>
         </div>
       </div>
@@ -804,7 +873,7 @@
       <div class="shell panel">
         <div class="card">
           <div class="slide-title">
-            <h2>3. Competencia y entorno</h2>
+            <h2>2. Competencia y entorno</h2>
             <p>Subazar tiene competencia a pocos metros. Aquí mostramos dos mapas cortos para que se entienda rápido dónde estamos parados y por qué la pauta local debe ser precisa.</p>
           </div>
           <div class="grid-2">
@@ -841,7 +910,7 @@
       <div class="shell panel">
         <div class="card">
           <div class="slide-title">
-            <h2>4. Propuesta de pauta</h2>
+            <h2>3. Propuesta de pauta</h2>
             <p>Estas son piezas que sí se pueden mostrar como dirección creativa de campaña.</p>
           </div>
           <div class="grid-4" style="margin-bottom:18px">
@@ -862,7 +931,7 @@
       <div class="shell panel">
         <div class="card">
           <div class="slide-title">
-            <h2>5. Pauta de la tarde</h2>
+            <h2>4. Pauta de la tarde</h2>
             <p>Estas piezas funcionan muy bien en horas valle, cuando conviene recordar la marca, abrir apetito y empujar consumo programado.</p>
           </div>
           <div class="grid-3" style="margin-bottom:18px">
@@ -888,7 +957,7 @@
       <div class="shell panel">
         <div class="card">
           <div class="slide-title">
-            <h2>6. Pauta de la mañana</h2>
+            <h2>5. Pauta de la mañana</h2>
             <p>Estos anuncios ayudan a arrancar el día con desayunos, proteína y café: muy útiles para oficina y primera compra.</p>
           </div>
           <div class="grid-3" style="margin-bottom:18px">
@@ -914,7 +983,7 @@
       <div class="shell panel">
         <div class="card">
           <div class="slide-title">
-            <h2>7. Horas pico y horas valle</h2>
+            <h2>6. Horas pico y horas valle</h2>
             <p>La pauta cambia según la intención de compra. En pico cerramos, en valle sembramos demanda.</p>
           </div>
           <div class="timeline">
@@ -969,7 +1038,7 @@
       <div class="shell panel">
         <div class="card">
           <div class="slide-title">
-            <h2>8. Método y presupuesto</h2>
+            <h2>7. Método y presupuesto</h2>
             <p>Primero estrategia, luego ejecución y al final inversión.</p>
           </div>
           <div class="grid-2">
